@@ -322,6 +322,10 @@ public class MapWidgetRegistry {
 		if (mode != ApplicationMode.DEFAULT) {
 			addControlId(map, cm, R.string.map_widget_top_text, settings.SHOW_STREET_NAME);
 		}
+		cm.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.compass_ruler, map)
+				.setIcon(R.drawable.ic_action_compass)
+				.setSelected(settings.SHOW_COMPASS_RULER.get())
+				.setListener(new ApearanceItemClickListener(settings.SHOW_COMPASS_RULER, map)).createItem());
 		cm.addItem(new ContextMenuItem.ItemBuilder().setTitleId(R.string.coordinates_widget, map)
 				.setIcon(R.drawable.ic_action_coordinates_widget)
 				.setSelected(settings.SHOW_COORDINATES_WIDGET.get())
